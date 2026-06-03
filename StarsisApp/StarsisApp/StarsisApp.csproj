@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD91D383-68A7-4395-87BE-388E0F8E23A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StarsisApp</RootNamespace>
+    <AssemblyName>StarsisApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\DbConnectionDAL.cs" />
+    <Compile Include="DAL\DepartmanDAL.cs" />
+    <Compile Include="DAL\PersonelDAL.cs" />
+    <Compile Include="DAL\PozisyonDAL.cs" />
+    <Compile Include="Entitiy\Departman.cs" />
+    <Compile Include="Entitiy\Personel.cs" />
+    <Compile Include="Entitiy\Pozisyon.cs" />
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmAnaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAnaMenu.Designer.cs">
+      <DependentUpon>FrmAnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmDepartman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmDepartman.Designer.cs">
+      <DependentUpon>FrmDepartman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmFinansHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmFinansHareket.Designer.cs">
+      <DependentUpon>FrmFinansHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmFinansRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmFinansRapor.Designer.cs">
+      <DependentUpon>FrmFinansRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmFinansSecim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmFinansSecim.Designer.cs">
+      <DependentUpon>FrmFinansSecim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmHesapPlani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmHesapPlani.Designer.cs">
+      <DependentUpon>FrmHesapPlani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmIKSecim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmIKSecim.Designer.cs">
+      <DependentUpon>FrmIKSecim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPersonel.Designer.cs">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPozisyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPozisyon.Designer.cs">
+      <DependentUpon>FrmPozisyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSatinAlmaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSatinAlmaDetay.Designer.cs">
+      <DependentUpon>FrmSatinAlmaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSatinAlmaSecim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSatinAlmaSecim.Designer.cs">
+      <DependentUpon>FrmSatinAlmaSecim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStok.Designer.cs">
+      <DependentUpon>FrmStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStokSecim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStokSecim.Designer.cs">
+      <DependentUpon>FrmStokSecim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTedarikci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTedarikci.Designer.cs">
+      <DependentUpon>FrmTedarikci.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmAnaMenu.resx">
+      <DependentUpon>FrmAnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmDepartman.resx">
+      <DependentUpon>FrmDepartman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmFinansHareket.resx">
+      <DependentUpon>FrmFinansHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmFinansRapor.resx">
+      <DependentUpon>FrmFinansRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmFinansSecim.resx">
+      <DependentUpon>FrmFinansSecim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmHesapPlani.resx">
+      <DependentUpon>FrmHesapPlani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmIKSecim.resx">
+      <DependentUpon>FrmIKSecim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPersonel.resx">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPozisyon.resx">
+      <DependentUpon>FrmPozisyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSatinAlmaDetay.resx">
+      <DependentUpon>FrmSatinAlmaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSatinAlmaSecim.resx">
+      <DependentUpon>FrmSatinAlmaSecim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStok.resx">
+      <DependentUpon>FrmStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStokSecim.resx">
+      <DependentUpon>FrmStokSecim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTedarikci.resx">
+      <DependentUpon>FrmTedarikci.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
